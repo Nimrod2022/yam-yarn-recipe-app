@@ -1,15 +1,12 @@
 import { useState } from "react";
-
+import Pages from "./pages/Pages";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
-
-
   return (
-    <>
-      <div>
-        <p className="text-3xl">Text</p>
-      </div>
-    </>
+    <BrowserRouter>
+      <Pages />
+    </BrowserRouter>
   );
 }
 
