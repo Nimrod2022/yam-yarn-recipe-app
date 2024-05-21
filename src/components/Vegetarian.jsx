@@ -42,21 +42,31 @@ function Vegetarian() {
 
   return (
     <>
-    <h1 className="text-2xl text-white py-5">Our Vegetarian Picks</h1>
+    <h1 className="text-2xl  py-5">Our Vegetarian Picks</h1>
    
-    <div className="flex gap-5 text-white">
-      
-      {vegetarian.length > 0 ? (
-        vegetarian.map((recipe) => (
-          <div key={recipe.id}>
-            <p className="text-xl font-semibold">{recipe.title}</p>
-            <img src={recipe.image} alt={recipe.title} className="rounded-2xl" />
+    <div className="md:flex gap-5 text-white ">
+        {vegetarian.length > 0 ? (
+          vegetarian.map((recipe) => (
+            <div
+              key={recipe.id}
+              className="position relative md:py-0 py-3 md:w-[1400px] md:h-[400px] rounded-2xl overflow-hidden"
+            >
+              <div className="position-absolute bottom-0 left-0 w-full bg-black bg-opacity-50 p-2">
+                <p className="md:text-xl font-semibold">{recipe.title}</p>
+              </div>
+              <img
+                src={recipe.image}
+                alt={recipe.title}
+                className="w-full h-full "
+              />
+            </div>
+          ))
+        ) : (
+          <div>
+            <p>No recipes found.</p>
           </div>
-        ))
-      ) : (
-        <div><p>No recipes found.</p></div>
-      )}
-    </div>
+        )}
+      </div>
     </>
   );
 }

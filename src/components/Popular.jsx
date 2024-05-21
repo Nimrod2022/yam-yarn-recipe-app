@@ -14,7 +14,7 @@ function Popular() {
     const checkPopular = localStorage.getItem("popular");
 
     if (checkPopular) {
-      setPopular(JSON.parse(checkpopular));
+      setPopular(JSON.parse(checkPopular));
     } else {
       try {
         console.log("Fetching URL:", url);
@@ -42,17 +42,22 @@ function Popular() {
 
   return (
     <>
-      <h1 className="text-2xl text-white py-5">Popular Picks</h1>
+      <h1 className="text-2xl  py-5">Popular Picks</h1>
 
-      <div className="flex gap-5  text-white">
+      <div className="md:flex gap-7 text-white">
         {popular.length > 0 ? (
           popular.map((recipe) => (
-            <div key={recipe.id}>
-              <p className="text-xl font-semibold">{recipe.title}</p>
+            <div
+              key={recipe.id}
+              className="position relative rounded-5xl md:w-[1400px] md:h-[400px] md:rounded-2xl md:py-0 py-3 overflow-hidden"
+            >
+              <div className="position-absolute bottom-0 left-0 w-full bg-black bg-opacity-50 p-2">
+                <p className="md:text-xl font-semibold">{recipe.title}</p>
+              </div>
               <img
                 src={recipe.image}
                 alt={recipe.title}
-                className="rounded-2xl"
+                className="w-full h-full object-cover"
               />
             </div>
           ))
