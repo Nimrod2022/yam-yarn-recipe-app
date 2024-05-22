@@ -7,7 +7,7 @@ function Categories() {
     <div className="flex gap-5 justify-center">
       <NavLink
         to={"/cuisines/American"}
-        className="flex rounded-full bg-blue-400 items-center gap-2"
+        className=" rounded-full bg-blue-400 items-center "
       >
         <FaHamburger className="size-6" />
         <h3>American</h3>
