@@ -7,11 +7,11 @@ import { useParams } from "react-router-dom";
 function Cuisines() {
   const apiKey = import.meta.env.VITE_REACT_APP_API_KEY;
   const { type } = useParams();
-
   const [cuisine, setCuisine] = useState([]);
 
   useEffect(() => {
     if (type) {
+      console.log(`Fetching cuisine type: ${type}`);
       getCuisine(type);
     }
   }, [type]);
@@ -20,9 +20,10 @@ function Cuisines() {
     const checkCuisine = localStorage.getItem(cuisineType);
 
     if (checkCuisine) {
+      console.log(`Found ${cuisineType} in localStorage`);
       setCuisine(JSON.parse(checkCuisine));
     } else {
-      const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=3&tags=${cuisineType}`;
+      const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=3&cuisine=${cuisineType}`;
       try {
         console.log("Fetching URL:", url);
         const api = await fetch(url);
@@ -68,7 +69,7 @@ function Cuisines() {
                 <img
                   src={recipe.image}
                   alt={recipe.title}
-                  className="w-full h-full "
+                  className="w-full h-full"
                 />
               </div>
             ))
