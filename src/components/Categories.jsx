@@ -5,7 +5,7 @@ import { GiNoodles, GiChopsticks } from "react-icons/gi";
 
 function Categories() {
   return (
-    <div className="flex gap-7 justify-center">
+    <div className="flex gap-7 py-10 justify-center">
         <NavLink to="/cuisines/"> All</NavLink>
       <NavLink to="/cuisines/American" className="rounded-full bg-blue-400 items-center">
         <FaHamburger className="size-6" />
