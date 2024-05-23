@@ -4,6 +4,7 @@ import Popular from "../components/Popular";
 import Categories from "../components/Categories";
 import { useParams } from "react-router-dom";
 import Search from "../components/Search";
+import { Link } from "react-router-dom";
 
 function Cuisines() {
   const apiKey = import.meta.env.VITE_REACT_APP_API_KEY;
@@ -50,7 +51,6 @@ function Cuisines() {
 
   return (
     <div className="md:px-28 px-5 h-screen bg-center md:bg-cover flex-col gap-10 roboto">
-     
       {!type ? (
         <>
           <Popular />
@@ -60,19 +60,18 @@ function Cuisines() {
         <div className="md:flex gap-5 text-white">
           {cuisine.length > 0 ? (
             cuisine.map((recipe) => (
-              <div
-                key={recipe.id}
-                className="position relative md:py-0 py-3 md:w-[1400px] md:h-[400px] rounded-2xl overflow-hidden"
-              >
-                <div className="position-absolute bottom-0 left-0 w-full bg-black bg-opacity-50 p-2">
-                  <p className="md:text-xl font-semibold">{recipe.title}</p>
-                </div>
-                <img
-                  src={recipe.image}
-                  alt={recipe.title}
-                  className="w-full h-full"
-                />
+              <Link to={"/recipe/" + recipe.id} key={recipe.id} className="block">
+            <div className="relative md:py-0 py-3 rounded-2xl overflow-hidden w-full">
+              <div className="absolute top-0 left-0 w-full bg-black bg-opacity-50 p-2">
+                <p className="md:text-xl font-semibold">{recipe.title}</p>
               </div>
+              <img
+                src={recipe.image}
+                alt={recipe.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </Link>
             ))
           ) : (
             <div>

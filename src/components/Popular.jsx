@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Popular() {
   const apiKey = import.meta.env.VITE_REACT_APP_API_KEY;
@@ -47,11 +48,9 @@ function Popular() {
       <div className="md:flex gap-7 text-white">
         {popular.length > 0 ? (
           popular.map((recipe) => (
-            <div
-              key={recipe.id}
-              className="position relative rounded-5xl md:w-[1400px] md:h-[400px] md:rounded-2xl md:py-0 py-3 overflow-hidden"
-            >
-              <div className="position-absolute bottom-0 left-0 w-full bg-black bg-opacity-50 p-2">
+            <Link to={"/recipe/" + recipe.id} key={recipe.id} className="block">
+            <div className="relative md:py-0 py-3 rounded-2xl overflow-hidden w-full">
+              <div className="absolute top-0 left-0 w-full bg-black bg-opacity-50 p-2">
                 <p className="md:text-xl font-semibold">{recipe.title}</p>
               </div>
               <img
@@ -60,6 +59,7 @@ function Popular() {
                 className="w-full h-full object-cover"
               />
             </div>
+          </Link>
           ))
         ) : (
           <div>

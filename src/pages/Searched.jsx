@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function Searched() {
   const apiKey = import.meta.env.VITE_REACT_APP_API_KEY;
@@ -32,11 +32,14 @@ function Searched() {
       
       { searchedRecipe.length > 0 ? (
         searchedRecipe.map((recipe) => (
+         <Link to={"/recipe/" + recipe.id}
+         key={recipe.id}
+         >
           <div
-            key={recipe.id}
+            
             className="position relative md:py-0 py-3 md:w-[1400px] md:h-[400px] rounded-2xl overflow-hidden"
           >
-            <div className="position-absolute bottom-0 left-0 w-full bg-black bg-opacity-50 p-2">
+            <div className="position-absolute top-0 left-0 w-full bg-black bg-opacity-50 p-2">
               <p className="md:text-xl font-semibold">{recipe.title}</p>
             </div>
             <img
@@ -45,6 +48,8 @@ function Searched() {
               className="w-full h-full"
             />
           </div>
+         
+         </Link>
         ))
       ) : (
         <p>No recipes found.</p>
@@ -52,5 +57,4 @@ function Searched() {
     </div>
   );
 }
-
 export default Searched;

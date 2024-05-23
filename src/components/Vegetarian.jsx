@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Vegetarian() {
   const apiKey = import.meta.env.VITE_REACT_APP_API_KEY;
@@ -17,7 +18,7 @@ function Vegetarian() {
       setVegetarian(JSON.parse(checkVegetarian));
     } else {
       try {
-        console.log("Fetching URL:", url); 
+        console.log("Fetching URL:", url);
         const api = await fetch(url);
 
         if (!api.ok) {
@@ -42,24 +43,23 @@ function Vegetarian() {
 
   return (
     <>
-    <h1 className="text-2xl  py-5">Our Vegetarian Picks</h1>
-   
-    <div className="md:flex gap-5 text-white ">
+      <h1 className="text-2xl  py-5">Our Vegetarian Picks</h1>
+
+      <div className="md:flex gap-5 text-white ">
         {vegetarian.length > 0 ? (
           vegetarian.map((recipe) => (
-            <div
-              key={recipe.id}
-              className="position relative md:py-0 py-3 md:w-[1400px] md:h-[400px] rounded-2xl overflow-hidden"
-            >
-              <div className="position-absolute bottom-0 left-0 w-full bg-black bg-opacity-50 p-2">
+            <Link to={"/recipe/" + recipe.id} key={recipe.id} className="block">
+            <div className="relative md:py-0 py-3 rounded-2xl overflow-hidden w-full">
+              <div className="absolute top-0 left-0 w-full bg-black bg-opacity-50 p-2">
                 <p className="md:text-xl font-semibold">{recipe.title}</p>
               </div>
               <img
                 src={recipe.image}
                 alt={recipe.title}
-                className="w-full h-full "
+                className="w-full h-full object-cover"
               />
             </div>
+          </Link>
           ))
         ) : (
           <div>
