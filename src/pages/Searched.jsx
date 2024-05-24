@@ -12,7 +12,6 @@ function Searched() {
   }, [params.search]);
 
   const getSearchedRecipe = async (searchName) => {
-   
     try {
       const api = await fetch(
         `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=3&query=${searchName}`
@@ -24,32 +23,25 @@ function Searched() {
       setSearchedRecipe(searchedData.results);
     } catch (err) {
       setError(err.message);
-    } 
+    }
   };
 
   return (
     <div className="md:flex gap-5 text-white">
-      
-      { searchedRecipe.length > 0 ? (
+      {searchedRecipe.length > 0 ? (
         searchedRecipe.map((recipe) => (
-         <Link to={"/recipe/" + recipe.id}
-         key={recipe.id}
-         >
-          <div
-            
-            className="position relative md:py-0 py-3 md:w-[1400px] md:h-[400px] rounded-2xl overflow-hidden"
-          >
-            <div className="position-absolute top-0 left-0 w-full bg-black bg-opacity-50 p-2">
-              <p className="md:text-xl font-semibold">{recipe.title}</p>
+          <Link to={"/recipe/" + recipe.id} key={recipe.id} className="block">
+            <div className="relative md:py-0 py-3 rounded-2xl overflow-hidden w-full">
+              <div className="absolute top-0 left-0 w-full bg-black bg-opacity-50 p-2">
+                <p className="md:text-xl font-semibold">{recipe.title}</p>
+              </div>
+              <img
+                src={recipe.image}
+                alt={recipe.title}
+                className="w-full h-full object-cover"
+              />
             </div>
-            <img
-              src={recipe.image}
-              alt={recipe.title}
-              className="w-full h-full"
-            />
-          </div>
-         
-         </Link>
+          </Link>
         ))
       ) : (
         <p>No recipes found.</p>
