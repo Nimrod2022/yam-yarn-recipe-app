@@ -1,19 +1,29 @@
-import Navbar from "../components/Navbar"
+import Navbar from "../components/Navbar";
 
 function Home() {
   return (
-  
-    <div className="bg-[url('/assets/bg-image-1.png')] h-screen bg-center md:bg-cover text-white roboto px-5 md:px-32">
-    <Navbar/>
+    <div className="md:h-screen    text-white  md:px-[120px]">
+     
+     <Navbar />
+      <div className="flex flex-col gap-12  justify-center md:bg-[url('/assets/Rectangle.svg')] md:mt-[40px]  h-[70%] rounded-2xl rounded-r-2xl px-[120px] bg-cover  bg-no-repeat  inter text-2xl">
+        <div className="md:w-[883px] mx-auto text-center">
+          <p className="text-white md:text-7xl font-bold">
+            DISCOVER DELICIOUS <br /> RECIPES
+          </p>
 
-    <div className="flex flex-col gap-12 justify-center items-center text-2xl h-[70%]">
-        <p className="text-white md:text-auto text-center">Cooking made easier with tasty recipes!</p>
+          <p className="text-[18px] w-[50%] mx-auto pt-[20px] pb-[60px]">
+            Explore endless culinary possibilities tailored to your taste, and
+            transform everyday ingredients into extraordinary dishes that
+            delight and inspire.
+          </p>
 
-        <button className="bg-[#55E5A4] rounded-lg text-black text-md px-5 py-2">Get started</button>
+          <button className="bg-[#F29C33]  flex items-center justify-center mx-auto rounded-lg text-black text-[18px] w-[192px] h-[54px] ">
+            Get started
+          </button>
+        </div>
+      </div>
     </div>
-</div>
-
-  )
+  );
 }
 
-export default Home
+export default Home;

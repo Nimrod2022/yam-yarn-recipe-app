@@ -12,4 +12,28 @@
       "wdth" 100,
       "GRAD" 0;
   }
+
+
+  .inter {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    
+  }
   
+
+.navbar{
+width: 1272px;
+height: 76px;
+}
+
+.home-text-header{
+  color: #FFF;
+text-align: center;
+font-family: Inter;
+font-size: 80px;
+font-style: normal;
+font-weight: 900;
+line-height: 100px; /* 125% */
+letter-spacing: -0.8px;
+text-transform: uppercase;
+}

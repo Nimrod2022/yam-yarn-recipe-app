@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Vegetarian() {
   const apiKey = import.meta.env.VITE_REACT_APP_API_KEY;
-  const url = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=3&tags=vegetarian`;
+  const url = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=3&tags=breakfast`;
 
   const [vegetarian, setVegetarian] = useState([]);
 

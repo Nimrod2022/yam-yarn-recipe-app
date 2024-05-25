@@ -11,8 +11,8 @@ import Recipe from "./Recipe";
 function Pages() {
   return (
     <>
-      <Search />
-      <Categories />
+      {/* <Search />
+      <Categories /> */}
 
       <Routes>
         <Route path="/" element={<Home />} />
