@@ -26,7 +26,7 @@ function Recipe() {
   };
 
   return (
-    <div className="flex gap-20">
+    <div className="flex gap-20 bg-[#D9D9D9] md:h-screen">
       <div>
         <h1 className="text-2xl font-bold mb-5">{recipeDetails.title}</h1>
         <img

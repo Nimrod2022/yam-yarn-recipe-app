@@ -27,7 +27,7 @@ function Searched() {
   };
 
   return (
-    <div className="md:flex gap-5 text-white">
+    <div className="md:flex gap-5 text-white ">
       {searchedRecipe.length > 0 ? (
         searchedRecipe.map((recipe) => (
           <Link to={"/recipe/" + recipe.id} key={recipe.id} className="block">

@@ -7,12 +7,14 @@ import { Route, Routes } from "react-router-dom";
 import Search from "../components/Search";
 import Categories from "../components/Categories";
 import Recipe from "./Recipe";
+import Navbar from "../components/Navbar";
 
 function Pages() {
   return (
     <>
       {/* <Search />
       <Categories /> */}
+      <Navbar/>
 
       <Routes>
         <Route path="/" element={<Home />} />

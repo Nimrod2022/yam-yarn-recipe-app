@@ -50,7 +50,7 @@ function Cuisines() {
   };
 
   return (
-    <div className="md:px-28 px-5 h-screen bg-center md:bg-cover flex-col gap-10 roboto">
+    <div className="md:px-28 px-5 h-screen bg-center md:bg-cover flex-col gap-10 bg-[#D9D9D9] roboto">
       {!type ? (
         <>
           <Popular />
