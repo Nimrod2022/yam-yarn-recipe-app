@@ -50,35 +50,48 @@ function Cuisines() {
   };
 
   return (
-    <div className="md:px-28 px-5 h-screen bg-center md:bg-cover flex-col gap-10 bg-[#D9D9D9] roboto">
+    <div className="md:px-28 px-5  bg-center md:bg-cover flex-col gap-10 bg-[#D9D9D9] roboto pb-28">
       {!type ? (
         <>
           <Popular />
           <Vegetarian />
         </>
       ) : (
-        <div className="md:flex gap-5 text-white">
-          {cuisine.length > 0 ? (
-            cuisine.map((recipe) => (
-              <Link to={"/recipe/" + recipe.id} key={recipe.id} className="block">
-            <div className="relative md:py-0 py-3 rounded-2xl overflow-hidden w-full">
-              <div className="absolute top-0 left-0 w-full bg-black bg-opacity-50 p-2">
-                <p className="md:text-xl font-semibold">{recipe.title}</p>
+        <div className="md:flex justify-between text-white">
+        {cuisine.length > 0 ? (
+          cuisine.map((recipe) => (
+            <Link to={"/recipe/" + recipe.id} key={recipe.id} className="block">
+              <div className="text-black md:w-[410px] md:h-[380px] rounded-2xl overflow-hidden shadow-lg">
+                <div className="h-[203px] overflow-hidden">
+                  <img
+                    src={recipe.image}
+                    alt={recipe.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="bg-[#FFFBF2] p-4 h-full">
+                  <p className="md:text-xl font-semibold mt-3">
+                    {recipe.title}
+                  </p>
+                  <p className="mt-3 text-sm">{` ${recipe.diets}`}</p>
+
+                  <div className="flex justify-between items-start mt-3">
+                    <p className="text-md mt-2">{`${recipe.readyInMinutes} - EASY PREP - ${recipe.servings} SERVINGS`}</p>
+
+                    <button className="border rounded-lg text-sm border-black hover:border-none hover:bg-[#F29C33] p-2">
+                      View recipe
+                    </button>
+                  </div>
+                </div>
               </div>
-              <img
-                src={recipe.image}
-                alt={recipe.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </Link>
-            ))
-          ) : (
-            <div>
-              <p>No recipes found.</p>
-            </div>
-          )}
-        </div>
+            </Link>
+          ))
+        ) : (
+          <div>
+            <p>No recipes found.</p>
+          </div>
+        )}
+      </div>
       )}
     </div>
   );

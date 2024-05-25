@@ -8,9 +8,9 @@ function Navbar() {
   const isHomePage = location.pathname === "/";
 
   return (
-    <header>
+    <header className={!isHomePage ? "sticky top-0 z-10 " : ""}>
       <div className="md:px-[120px] bg-[#D9D9D9] pt-[30px]">
-        <nav className="text-black md:text-[12px] flex border-2 border-[#aeaead] rounded-2xl justify-between md:px-[41.5px]">
+        <nav className="text-black md:text-[12px] flex border-2 border-[#aeaead]  rounded-2xl justify-between md:px-[41.5px]">
           <div className="py-[14px]">
             <NavLink to="/">
               <img src="/assets/logo.svg" alt="logo" />
