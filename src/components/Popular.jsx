@@ -53,22 +53,12 @@ function Popular() {
           type: "slide",
           perPage: 3,
           gap: "1rem",
-          autoplay: false,
+          autoplay: true,
           arrows: false,
           drag:"free",
           gap: "5rem",
           pagination: true,
-          breakpoints: {
-            640: {
-              perPage: 1,
-            },
-            768: {
-              perPage: 5,
-            },
-            1024: {
-              perPage: 5,
-            },
-          },
+          
         }}
       >
         {popular.map((recipe) => (

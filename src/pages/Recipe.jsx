@@ -30,45 +30,56 @@ function Recipe() {
   };
 
   return (
-    <div className="bg-[#D9D9D9] md:h-screen">
+    <div className="bg-[#D9D9D9] md:px-0 px-5 md:h-screen">
       <div className="flex flex-col justify-center items-center pt-7">
-        <div className="bg-[#F29C33] w-[8%] rounded-xl text-center">
+        <div className="bg-[#F29C33] md:w-[8%] rounded-xl text-center">
           <p className="px-4 text-white py-2">RECIPE</p>
         </div>
 
-        <h1 className="text-2xl font-bold pt-5">
+        <h1 className="text-2xl text-center font-bold pt-5">
           {recipeDetails.title?.toUpperCase()}
         </h1>
 
-        <p className="text-[#6e6d6b] w-[40%] text-center pt-5">
+        <p className="text-[#6e6d6b] md:w-[40%] text-center pt-5">
           Welcome to Cooks Yum Yarn, where culinary dreams come alive! Today, we
           embark on a journey of flavors with a dish that promises to elevate
           your dining experience – our Citrus Infusion Delight: Lemon Garlic
           Roasted Chicken.
         </p>
 
-        <div className="flex gap-20 pt-10">
-          <p className="flex">
-            {" "}
-          <img src="/assets/timer.svg" alt="timer" /> {recipeDetails.readyInMinutes} MINUTES
+        <div className="flex md:gap-10 pt-10">
+          <p className="md:flex ">
+           
+            <img src="/assets/timer.svg" alt="timer" className="items-center" />
+            {recipeDetails.readyInMinutes}  MINUTES
           </p>
+
+          <p className="flex">
+          
+            <img src="/assets/prep.svg" alt="timer" />{" "}
+            {parseInt(recipeDetails.readyInMinutes, 10) >= 60
+              ? "HARD PREP"
+              : "EASY PREP"}
+          </p>
+
           <p className="flex">
             {" "}
-          <img src="/assets/serving.svg" alt="timer" /> {recipeDetails.servings} SERVINGS
+            <img src="/assets/serving.svg" alt="timer" />{" "}
+            {recipeDetails.servings} SERVINGS
           </p>
         </div>
       </div>
 
-      <div className="flex justify-center gap-20 mt-10">
-        <div className="w-1/2 max-w-lg">
+      <div className="md:flex justify-center gap-20 mt-10">
+        <div className="md:w-1/2 max-w-lg">
           <img
             src={recipeDetails.image}
             alt={recipeDetails.title}
-            className="w-full h-[400px] object-cover rounded-lg"
+            className="w-full md:h-[400px] h-[280px] object-cover rounded-lg"
           />
         </div>
 
-        <div className="w-1/2 max-w-lg">
+        <div className="md:pt-0 pt-5 w-1/2 max-w-lg">
           <div className="flex gap-5 mb-5">
             <button
               className={`px-3 py-1 ${
