@@ -47,26 +47,41 @@ function Recipe() {
           Roasted Chicken.
         </p>
 
-        <div className="flex md:gap-10 pt-10">
-          <p className="md:flex ">
-           
-            <img src="/assets/timer.svg" alt="timer" className="items-center" />
-            {recipeDetails.readyInMinutes}  MINUTES
-          </p>
+        <div className="flex md:gap-10 gap-5 pt-10">
+          <div className="flex items-center gap-2 md:gap-3">
+            <img
+              src="/assets/timer.svg"
+              alt="timer"
+              className="md:size-auto size-4"
+            />
+            <p className="md:text-lg text-xs">
+              {recipeDetails.readyInMinutes} MINUTES
+            </p>
+          </div>
 
-          <p className="flex">
-          
-            <img src="/assets/prep.svg" alt="timer" />{" "}
-            {parseInt(recipeDetails.readyInMinutes, 10) >= 60
-              ? "HARD PREP"
-              : "EASY PREP"}
-          </p>
+          <div className="flex items-center gap-2 md:gap-3">
+            <img
+              src="/assets/prep.svg"
+              alt="prep time"
+              className="md:size-auto size-5"
+            />
+            <p className="md:text-lg text-xs">
+              {parseInt(recipeDetails.readyInMinutes, 10) >= 60
+                ? "HARD PREP"
+                : "EASY PREP"}
+            </p>
+          </div>
 
-          <p className="flex">
-            {" "}
-            <img src="/assets/serving.svg" alt="timer" />{" "}
-            {recipeDetails.servings} SERVINGS
-          </p>
+          <div className="flex items-center gap-2 md:gap-3">
+            <img
+              src="/assets/serving.svg"
+              alt="servings"
+              className="md:size-auto size-5"
+            />
+            <p className="md:text-lg text-xs">
+              {recipeDetails.servings} SERVINGS
+            </p>
+          </div>
         </div>
       </div>
 
@@ -79,10 +94,10 @@ function Recipe() {
           />
         </div>
 
-        <div className="md:pt-0 pt-5 w-1/2 max-w-lg">
-          <div className="flex gap-5 mb-5">
+        <div className="md:pt-0 pt-5 md:w-1/2 px-3 md:text-[16px] md:pb-0 pb-10  text-sm max-w-lg">
+          <div className="flex gap-5  mb-5 ">
             <button
-              className={`px-3 py-1 ${
+              className={`md:px-3 md:text-lg text-xs px-2 py-1 ${
                 activeTab === "summary"
                   ? "bg-[#F29C33] text-white"
                   : "border-2 border-black"
@@ -92,7 +107,7 @@ function Recipe() {
               Summary
             </button>
             <button
-              className={`px-3 py-1 ${
+              className={`md:px-3 md:text-lg text-xs px-2 py-1 ${
                 activeTab === "ingredients"
                   ? "bg-[#F29C33] text-white"
                   : "border-2 border-black"
@@ -102,7 +117,7 @@ function Recipe() {
               Ingredients
             </button>
             <button
-              className={`px-3 py-1 ${
+              className={`md:px-3 md:text-lg text-xs px-2 py-1 ${
                 activeTab === "instructions"
                   ? "bg-[#F29C33] text-white"
                   : "border-2 border-black"

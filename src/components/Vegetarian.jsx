@@ -73,7 +73,7 @@ function Vegetarian() {
         {vegetarian.map((recipe) => (
           <SplideSlide key={recipe.id}>
             <Link to={"/recipe/" + recipe.id} className="block">
-              <div className="text-black w-[410px] h-[380px] rounded-2xl overflow-hidden shadow-lg">
+              <div className="text-black md:w-[410px] md:h-[380px] rounded-2xl overflow-hidden shadow-lg">
                 <div className="h-[203px] overflow-hidden">
                   <img
                     src={recipe.image}
@@ -82,11 +82,11 @@ function Vegetarian() {
                   />
                 </div>
                 <div className="bg-[#FFFBF2] p-4 h-full">
-                  <p className="text-xl font-semibold mt-3">{recipe.title}</p>
+                  <p className="md:text-xl font-semibold mt-3">{recipe.title}</p>
                   <p className="mt-3 text-sm">{` ${recipe.diets}`}</p>
                   <div className="flex justify-between items-start mt-3">
-                    <p className="text-md mt-2">{`${recipe.readyInMinutes} - EASY PREP - ${recipe.servings} SERVINGS`}</p>
-                    <button className="border rounded-lg text-sm border-black hover:border-none hover:bg-[#F29C33] p-2">View recipe</button>
+                    <p className="text-xs md:text-md mt-2">{`${recipe.readyInMinutes} - EASY PREP - ${recipe.servings} SERVINGS`}</p>
+                    <button className="border rounded-lg text-xs md:text-sm border-black hover:border-none hover:bg-[#F29C33] p-2">View recipe</button>
                   </div>
                 </div>
               </div>
