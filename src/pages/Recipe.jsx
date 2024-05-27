@@ -21,7 +21,7 @@ function Recipe() {
       `https://api.spoonacular.com/recipes/${params.id}/information?apiKey=${apiKey}`
     );
     const data = await api.json();
-    console.log(data);
+    console.log("recipe", data);
     setRecipeDetails(data);
   };
 

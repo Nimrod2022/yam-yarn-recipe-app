@@ -39,6 +39,7 @@ function Cuisines() {
 
         if (data && data.results) {
           setCuisine(data.results);
+          console.log("API response data:", );
           localStorage.setItem(cuisineType, JSON.stringify(data.results));
         } else {
           console.error("No recipes found in the API response");
@@ -51,8 +52,16 @@ function Cuisines() {
 
   return (
     <div className="md:px-28 px-5  bg-center md:bg-cover flex-col gap-10 bg-[#D9D9D9] roboto pb-28">
+      <h1 className="text-center text-2xl font-semibold pt-8">CATEGORIES</h1>
+      <p className="text-center text-xl text-[#4A4947] pt-3">With our diverse collection of recipes we have something to satisfy every palate.</p>
+      <div className="flex justify-center gap-8 pt-5">
+     
+        
+       
+      </div>
       {!type ? (
         <>
+        <Categories/>
           <Popular />
           <Vegetarian />
         </>
@@ -82,7 +91,7 @@ function Cuisines() {
                     <div className="flex justify-between items-start mt-3">
                       <p className="text-md mt-2">
                         {`${recipeDetails.readyInMinutes} - ${
-                          recipeDetails.readyInMinutes >= 60
+                         parseInt(recipeDetails.readyInMinutes, 10)
                             ? "HARD PREP"
                             : "EASY PREP"
                         } - ${recipeDetails.servings} SERVINGS`}

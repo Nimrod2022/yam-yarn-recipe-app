@@ -5,23 +5,23 @@ import { GiNoodles, GiChopsticks } from "react-icons/gi";
 
 function Categories() {
   return (
-    <div className="flex gap-7 py-10 justify-center">
-        <NavLink to="/cuisines/"> All</NavLink>
-      <NavLink to="/cuisines/American" className="rounded-full bg-blue-400 items-center">
-        <FaHamburger className="size-6" />
-        <h3>American</h3>
+    <div className="flex gap-7 pt-5 justify-center">
+      <NavLink to="/cuisines/"> <img src="/assets/all.svg" alt="all" /> </NavLink>
+      <NavLink
+        to="/cuisines/American"
+        className="rounded-full bg-blue-400 items-center"
+      >
+        <img src="/assets/american.svg" alt="american" />
       </NavLink>
       <NavLink to="/cuisines/Italian">
-        <FaPizzaSlice />
-        <h3>Italian</h3>
+        <img src="/assets/italian.svg" alt="italian" />
       </NavLink>
-      <NavLink to="/cuisines/Thai">
+      {/* <NavLink to="/cuisines/Thai">
         <GiNoodles />
         <h3>Thai</h3>
-      </NavLink>
+      </NavLink> */}
       <NavLink to="/cuisines/Chinese">
-        <GiChopsticks />
-        <h3>Chinese</h3>
+        <img src="/assets/chinese.svg" alt="chinese" />
       </NavLink>
     </div>
   );
