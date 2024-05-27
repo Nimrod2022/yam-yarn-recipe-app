@@ -17,7 +17,7 @@ function Navbar() {
             </NavLink>
           </div>
           <div className="text-[#7A7A7A] md:py-[30px] flex md:gap-16 gap-8 text-sm font-semibold">
-            <NavLink to="/" className="hover:text-[#F29C33]">
+            <NavLink to="/" className="hover:text-[#F29C33] text-[#F29C33]">
               HOME
             </NavLink>
 
