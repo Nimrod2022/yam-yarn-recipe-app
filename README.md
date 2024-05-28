@@ -44,7 +44,7 @@ I adopted the `BEM` naming style for my css class names and ...
 -->
 ## Status
 
- Project is  `50%` complete.
+ Project is  `85%` complete.
 
 ## Credits
 
