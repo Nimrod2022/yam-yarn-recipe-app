@@ -33,7 +33,7 @@ function Vegetarian() {
 
         if (data && data.recipes) {
           setVegetarian(data.recipes);
-          localStorage.setItem("vegetarian", JSON.stringify(data.recipes));
+          // localStorage.setItem("vegetarian", JSON.stringify(data.recipes));
         } else {
           console.error("No recipes found in the API response");
         }
@@ -43,54 +43,65 @@ function Vegetarian() {
     }
   };
 
+  const capitalizeFirstDietLetter = (diets) => {
+    if (!Array.isArray(diets) || diets.length === 0) {
+      return "";
+    }
+
+    return diets
+      .map((diet) => diet.charAt(0).toUpperCase() + diet.slice(1))
+      .join(",  ");
+  };
+
   return (
     <>
       <h1 className="text-2xl  py-5">Our Vegetarian Picks</h1>
 
       <Splide
-  options={{
-    type: "slide",
-    perPage: 3,
-    padding: 10,
-    autoplay: true,
-    arrows: false,
-    drag: "free",
-    gap: "3rem",
-    pagination: false,
-    breakpoints: {
-      320: {
-        perPage: 1,
-      },
-      640: {
-        perPage: 1,
-      },
-      768: {
-        perPage: 2,
-      },
-      1024: {
-        perPage: 3,
-      },
-      1280: {
-        perPage: 3,
-      },
-      1366: {
-        perPage: 3,
-      },
-      1536: {
-        perPage: 3,
-      },
-      1920: {
-        perPage: 4,
-      },
-      2560: {
-        perPage: 4,
-      },
-      3840: {
-        perPage: 5,
-      },
-    },
-  }}
->
+        options={{
+          type: "slide",
+          perPage: 3,
+          padding: 10,
+          autoplay: true,
+          arrows: false,
+          drag: "free",
+          gap: "3rem",
+
+          pagination: false,
+          breakpoints: {
+            320: {
+              perPage: 1,
+            },
+            640: {
+              perPage: 1,
+            },
+            768: {
+              perPage: 2,
+            },
+            1024: {
+              perPage: 3,
+            },
+            1280: {
+              perPage: 3,
+            },
+            1366: {
+              perPage: 3,
+            },
+            1536: {
+              perPage: 3,
+            },
+            1920: {
+              perPage: 3,
+            },
+            2560: {
+              perPage: 4,
+            },
+            3840: {
+              perPage: 5,
+            },
+          },
+        }}
+      >
         {vegetarian.map((recipe) => (
           <SplideSlide key={recipe.id}>
             <Link to={"/recipe/" + recipe.id} className="block">
@@ -103,11 +114,17 @@ function Vegetarian() {
                   />
                 </div>
                 <div className="bg-[#FFFBF2] p-4 h-full">
-                  <p className="md:text-xl font-semibold mt-3">{recipe.title}</p>
-                  <p className="mt-3 text-sm">{` ${recipe.diets}`}</p>
+                  <p className="md:text-xl font-semibold mt-3">
+                    {recipe.title}
+                  </p>
+                  <p className="mt-3 text-sm">
+                    {capitalizeFirstDietLetter(recipe.diets)}
+                  </p>
                   <div className="flex justify-between items-start mt-3">
                     <p className="text-xs md:text-md mt-2">{`${recipe.readyInMinutes} - EASY PREP - ${recipe.servings} SERVINGS`}</p>
-                    <button className="border rounded-lg text-xs md:text-sm border-black hover:border-none hover:bg-[#F29C33] p-2">View recipe</button>
+                    <button className="border rounded-lg text-xs md:text-sm border-black hover:border-none hover:bg-[#F29C33] p-2">
+                      View recipe
+                    </button>
                   </div>
                 </div>
               </div>

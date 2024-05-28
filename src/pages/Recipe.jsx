@@ -151,15 +151,12 @@ function Recipe() {
             )}
             {activeTab === "instructions" && (
               <div>
-                <ol className="list-decimal list-inside">
-                  {recipeDetails.instructions
-                    ?.split("\n")
-                    .map((instruction, index) => (
-                      <li className="pt-2" key={index}>
-                        {instruction}
-                      </li>
-                    ))}
-                </ol>
+                <ol
+                  className="list-decimal list-inside"
+                  dangerouslySetInnerHTML={{
+                    __html: recipeDetails.instructions,
+                  }}
+                />
               </div>
             )}
           </div>

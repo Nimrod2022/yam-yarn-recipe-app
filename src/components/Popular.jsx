@@ -34,7 +34,7 @@ function Popular() {
         if (data && data.recipes) {
           setPopular(data.recipes);
 
-          localStorage.setItem("popular", JSON.stringify(data.recipes));
+          // localStorage.setItem("popular", JSON.stringify(data.recipes));
         } else {
           console.error("No recipes found in the API response");
         }
@@ -42,6 +42,13 @@ function Popular() {
         console.error("Error fetching the recipes:", error);
       }
     }
+  };
+  const capitalizeFirstDietLetter = (diets) => {
+    if (!Array.isArray(diets) || diets.length === 0) {
+      return ""; 
+    }
+  
+    return diets.map(diet => diet.charAt(0).toUpperCase() + diet.slice(1)).join(",  ");
   };
 
   return (
@@ -107,7 +114,7 @@ function Popular() {
                   <p className="md:text-xl font-semibold mt-3">
                     {recipe.title}
                   </p>
-                  <p className="mt-3 text-sm">{` ${recipe.diets}`}</p>
+                  <p className="mt-3 text-sm">{capitalizeFirstDietLetter(recipe.diets)}</p>
                   <div className="flex justify-between items-start mt-3">
                     <p className="md:text-md text-xs mt-2">{`${recipe.readyInMinutes} - EASY PREP - ${recipe.servings} SERVINGS`}</p>
                     <button className="border rounded-lg text-xs md:text-sm border-black hover:border-none hover:bg-[#F29C33] p-2">
