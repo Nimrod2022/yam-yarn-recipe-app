@@ -15,7 +15,7 @@
 <!-- - [License](#license) -->
 ## About
 
-Tabled is a recipe app designed to make cooking easier. The recipes are fetched from the Spoonacular food API. Users can filter recipes based on cuisines and can also search for specific cusines.
+Tabled is a recipe app designed to make cooking easier. The recipes are fetched from the Spoonacular food API. Users can filter recipes based on cuisines and can also search for specific dishes. Kindly note that the API has a limit of 150 requests per day.
 
 ## Live link
 
