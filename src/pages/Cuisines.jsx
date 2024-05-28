@@ -76,11 +76,11 @@ function Cuisines() {
           options={{
             type: "slide",
             perPage: 3,
-           
+
             autoplay: true,
             arrows: false,
             drag: "free",
-         
+
             pagination: false,
             breakpoints: {
               320: {
@@ -119,7 +119,7 @@ function Cuisines() {
           <div className="md:flex justify-between text-white">
             {cuisine.length > 0 ? (
               cuisine.map((recipe) => (
-                <SplideSlide key={recipe.id} className="md:px-7 md:py-0 py-5 " >
+                <SplideSlide key={recipe.id} className="md:px-7 md:py-0 py-5 ">
                   <Link to={"/recipe/" + recipe.id} className="block ">
                     <div className="text-black md:w-[410px] md:h-[380px] rounded-2xl overflow-hidden  shadow-lg">
                       <div className="h-[203px] overflow-hidden">
@@ -137,7 +137,7 @@ function Cuisines() {
                           <p className="mt-3 text-sm">{recipe.diets}</p>
                         )}
                         <div className="flex justify-between items-start mt-3">
-                          {type === "All" && recipe.readyInMinutes &&(
+                          {type === "All" && recipe.readyInMinutes && (
                             <p className="text-md mt-2">{`${
                               recipe.readyInMinutes
                             } - ${
@@ -156,8 +156,11 @@ function Cuisines() {
                 </SplideSlide>
               ))
             ) : (
-              <div>
-                <NoData/>
+              <div >
+
+            
+              
+                <NoData />
               </div>
             )}
           </div>

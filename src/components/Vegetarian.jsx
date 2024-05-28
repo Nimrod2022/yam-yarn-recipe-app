@@ -33,7 +33,7 @@ function Vegetarian() {
 
         if (data && data.recipes) {
           setVegetarian(data.recipes);
-          // localStorage.setItem("vegetarian", JSON.stringify(data.recipes));
+          localStorage.setItem("vegetarian", JSON.stringify(data.recipes));
         } else {
           console.error("No recipes found in the API response");
         }

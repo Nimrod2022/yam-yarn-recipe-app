@@ -34,7 +34,7 @@ function Popular() {
         if (data && data.recipes) {
           setPopular(data.recipes);
 
-          // localStorage.setItem("popular", JSON.stringify(data.recipes));
+          localStorage.setItem("popular", JSON.stringify(data.recipes));
         } else {
           console.error("No recipes found in the API response");
         }
