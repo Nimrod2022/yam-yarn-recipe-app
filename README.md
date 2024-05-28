@@ -19,7 +19,7 @@ Tabled is a recipe app designed to make cooking easier. The recipes are fetched 
 
 ## Live link
 
-<!-- Access site at [Kibet portfolio](https://kibetnimrod.com) -->
+Access demo at [Kibet portfolio](https://kibetnimrod.com) 
 
 ## Screenshots
 
