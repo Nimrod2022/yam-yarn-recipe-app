@@ -68,44 +68,12 @@ function Vegetarian() {
           gap: "3rem",
 
           pagination: false,
-          breakpoints: {
-            320: {
-              perPage: 1,
-            },
-            640: {
-              perPage: 1,
-            },
-            768: {
-              perPage: 2,
-            },
-            1024: {
-              perPage: 3,
-            },
-            1280: {
-              perPage: 3,
-            },
-            1366: {
-              perPage: 3,
-            },
-            1536: {
-              perPage: 3,
-            },
-            1920: {
-              perPage: 3,
-            },
-            2560: {
-              perPage: 4,
-            },
-            3840: {
-              perPage: 5,
-            },
-          },
         }}
       >
         {vegetarian.map((recipe) => (
           <SplideSlide key={recipe.id}>
             <Link to={"/recipe/" + recipe.id} className="block">
-              <div className="text-black md:w-[410px] md:h-[380px] rounded-2xl overflow-hidden shadow-lg">
+              <div className="text-black  md:h-[380px] rounded-2xl overflow-hidden shadow-lg">
                 <div className="h-[203px] overflow-hidden">
                   <img
                     src={recipe.image}

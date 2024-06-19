@@ -40,12 +40,7 @@ function Recipe() {
           {recipeDetails.title?.toUpperCase()}
         </h1>
 
-        <p className="text-[#6e6d6b] md:w-[40%] text-center pt-5">
-          Welcome to Cooks Yum Yarn, where culinary dreams come alive! Today, we
-          embark on a journey of flavors with a dish that promises to elevate
-          your dining experience – our Citrus Infusion Delight: Lemon Garlic
-          Roasted Chicken.
-        </p>
+        
 
         <div className="flex md:gap-10 gap-5 pt-10">
           <div className="flex items-center gap-2 md:gap-3">

@@ -27,11 +27,12 @@ function Searched() {
   };
 
   return (
-    <div className="md:flex justify-between text-white md:px-[120px] md:h-screen md:pt-20 bg-[#D9D9D9] ">
+    <div className="bg-[#D9D9D9] h-screen ">
+      <div className="md:flex justify-between text-white md:w-5/6 xl:w-4/6 mx-auto  md:pt-20 ">
         {searchedRecipe.length > 0 ? (
           searchedRecipe.map((recipe) => (
             <Link to={"/recipe/" + recipe.id} key={recipe.id} className="block">
-              <div className="text-black md:w-[410px] md:h-[380px] rounded-2xl overflow-hidden shadow-lg">
+              <div className="text-black md:w-[410px] md:h-[400px] rounded-2xl overflow-hidden shadow-lg">
                 <div className="h-[203px] overflow-hidden">
                   <img
                     src={recipe.image}
@@ -62,6 +63,7 @@ function Searched() {
           </div>
         )}
       </div>
+    </div>
   );
 }
 export default Searched;

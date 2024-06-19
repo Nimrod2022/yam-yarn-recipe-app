@@ -18,8 +18,8 @@ function Navbar() {
 
   return (
     <header className={!isHomePage ? "sticky top-0 z-10 " : ""}>
-      <div className="md:px-[120px] px-3 bg-[#D9D9D9] pt-5 md:pt-[30px]">
-        <nav className="text-black md:text-[12px] flex border-2 border-[#aeaead]  rounded-2xl justify-between md:px-[41.5px]">
+      <div className=" px-3 bg-[#D9D9D9] pt-5 md:pt-[30px] ">
+        <nav className="text-black md:text-[12px] flex border-2 border-[#aeaead] md:w-5/6 xl:w-4/6 mx-auto rounded-2xl justify-between md:px-[41.5px]">
           <div className="md:py-[14px] md:px-auto px-3">
             <NavLink to="/">
               <img

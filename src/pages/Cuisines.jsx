@@ -54,118 +54,88 @@ function Cuisines() {
   };
 
   return (
-    <div className="md:px-28 px-5  bg-center md:bg-cover flex-col gap-10 bg-[#D9D9D9] roboto pb-28">
-      <h1 className="text-center text-2xl font-semibold pt-8">CATEGORIES</h1>
-      <p className="text-center md:text-xl text-[#4A4947] pt-3">
-        With our diverse collection of recipes we have something to satisfy
-        every palate.
-      </p>
-      <div className="flex justify-center gap-8 pt-5">
-        <div className="md:pb-10 pb-5">
-          {" "}
-          <Categories />
+    <div className="bg-[#D9D9D9]">
+      <div className="px-5  bg-center md:bg-cover flex-col gap-10 md:w-5/6 xl:w-4/6 mx-auto roboto pb-28">
+        <h1 className="text-center text-2xl font-semibold pt-8">CATEGORIES</h1>
+        <p className="text-center md:text-xl text-[#4A4947] pt-3">
+          With our diverse collection of recipes we have something to satisfy
+          every palate.
+        </p>
+        <div className="flex justify-center gap-8 pt-5">
+          <div className="md:pb-10 pb-5">
+            {" "}
+            <Categories />
+          </div>
         </div>
-      </div>
-      {!type ? (
-        <>
-          <Popular />
-          <Vegetarian />
-        </>
-      ) : (
-        <Splide
-          options={{
-            type: "slide",
-            perPage: 3,
+        {!type ? (
+          <>
+            <Popular />
+            <Vegetarian />
+          </>
+        ) : (
+          <Splide
+            options={{
+              type: "slide",
+              perPage: 3,
 
-            autoplay: true,
-            arrows: false,
-            drag: "free",
+              autoplay: true,
+              arrows: false,
+              drag: "free",
 
-            pagination: false,
-            breakpoints: {
-              320: {
-                perPage: 1,
-              },
-              640: {
-                perPage: 1,
-              },
-              768: {
-                perPage: 2,
-              },
-              1024: {
-                perPage: 3,
-              },
-              1280: {
-                perPage: 3,
-              },
-              1366: {
-                perPage: 3,
-              },
-              1536: {
-                perPage: 3,
-              },
-              1920: {
-                perPage: 3,
-              },
-              2560: {
-                perPage: 4,
-              },
-              3840: {
-                perPage: 5,
-              },
-            },
-          }}
-        >
-          <div className="md:flex justify-between text-white">
-            {cuisine.length > 0 ? (
-              cuisine.map((recipe) => (
-                <SplideSlide key={recipe.id} className="md:px-7 md:py-0 py-5 ">
-                  <Link to={"/recipe/" + recipe.id} className="block ">
-                    <div className="text-black md:w-[410px] md:h-[380px] rounded-2xl overflow-hidden  shadow-lg">
-                      <div className="h-[203px] overflow-hidden">
-                        <img
-                          src={recipe.image}
-                          alt={recipe.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="bg-[#FFFBF2] p-4 h-full">
-                        <p className="md:text-xl font-semibold mt-3">
-                          {recipe.title}
-                        </p>
-                        {type === "All" && recipe.diets && (
-                          <p className="mt-3 text-sm">{recipe.diets}</p>
-                        )}
-                        <div className="flex justify-between items-start mt-3">
-                          {type === "All" && recipe.readyInMinutes && (
-                            <p className="text-md mt-2">{`${
-                              recipe.readyInMinutes
-                            } - ${
-                              parseInt(recipe.readyInMinutes, 10)
-                                ? "HARD PREP"
-                                : "EASY PREP"
-                            } - ${recipe.servings} SERVINGS`}</p>
+              pagination: false,
+            }}
+          >
+            <div className="md:flex justify-between text-white">
+              {cuisine.length > 0 ? (
+                cuisine.map((recipe) => (
+                  <SplideSlide
+                    key={recipe.id}
+                    className="md:px-7 md:py-0 py-5 "
+                  >
+                    <Link to={"/recipe/" + recipe.id} className="block ">
+                      <div className="text-black md:w-[410px] md:h-[380px] rounded-2xl overflow-hidden  shadow-lg">
+                        <div className="h-[203px] overflow-hidden">
+                          <img
+                            src={recipe.image}
+                            alt={recipe.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="bg-[#FFFBF2] p-4 h-full">
+                          <p className="md:text-xl font-semibold mt-3">
+                            {recipe.title}
+                          </p>
+                          {type === "All" && recipe.diets && (
+                            <p className="mt-3 text-sm">{recipe.diets}</p>
                           )}
-                          <button className="border rounded-lg text-sm border-black hover:border-none hover:bg-[#F29C33] p-2">
-                            View recipe
-                          </button>
+                          <div className="flex justify-between items-start mt-3">
+                            {type === "All" && recipe.readyInMinutes && (
+                              <p className="text-md mt-2">{`${
+                                recipe.readyInMinutes
+                              } - ${
+                                parseInt(recipe.readyInMinutes, 10)
+                                  ? "HARD PREP"
+                                  : "EASY PREP"
+                              } - ${recipe.servings} SERVINGS`}</p>
+                            )}
+                            <button className="border rounded-lg text-sm border-black hover:border-none hover:bg-[#F29C33] p-2">
+                              View recipe
+                            </button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </Link>
-                </SplideSlide>
-              ))
-            ) : (
-              <div >
-
-            
-              
-                <NoData />
-              </div>
-            )}
-          </div>
-        </Splide>
-      )}
+                    </Link>
+                  </SplideSlide>
+                ))
+              ) : (
+                <div>
+                  <NoData />
+                </div>
+              )}
+            </div>
+          </Splide>
+        )}
+      </div>
     </div>
   );
 }
