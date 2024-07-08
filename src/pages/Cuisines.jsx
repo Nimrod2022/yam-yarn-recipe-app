@@ -77,12 +77,13 @@ function Cuisines() {
             options={{
               type: "slide",
               perPage: 3,
-
+              padding: 10,
               autoplay: true,
               arrows: false,
               drag: "free",
-
+              gap: "3rem",
               pagination: false,
+             
             }}
           >
             <div className="md:flex justify-between text-white">
@@ -93,7 +94,7 @@ function Cuisines() {
                     className="md:px-7 md:py-0 py-5 "
                   >
                     <Link to={"/recipe/" + recipe.id} className="block ">
-                      <div className="text-black md:w-[410px] md:h-[380px] rounded-2xl overflow-hidden  shadow-lg">
+                      <div className="text-black  md:h-[380px] md:w-[380px] w-full rounded-2xl overflow-hidden  shadow-lg">
                         <div className="h-[203px] overflow-hidden">
                           <img
                             src={recipe.image}
@@ -102,13 +103,13 @@ function Cuisines() {
                           />
                         </div>
                         <div className="bg-[#FFFBF2] p-4 h-full">
-                          <p className="md:text-xl font-semibold mt-3">
+                          <p className="md:text-lg font-semibold mt-3 text-center ">
                             {recipe.title}
                           </p>
                           {type === "All" && recipe.diets && (
-                            <p className="mt-3 text-sm">{recipe.diets}</p>
+                            <p className="mt-3 text-sm">{recipe?.diets}</p>
                           )}
-                          <div className="flex justify-between items-start mt-3">
+                          <div className="mt-3 md:mt-5 flex justify-center items-center">
                             {type === "All" && recipe.readyInMinutes && (
                               <p className="text-md mt-2">{`${
                                 recipe.readyInMinutes
@@ -118,7 +119,7 @@ function Cuisines() {
                                   : "EASY PREP"
                               } - ${recipe.servings} SERVINGS`}</p>
                             )}
-                            <button className="border rounded-lg text-sm border-black hover:border-none hover:bg-[#F29C33] p-2">
+                            <button className="border  rounded-lg text-sm hover:bg-[#D9D9D9] bg-[#F29C33] p-2  md:text-lg md:px-3">
                               View recipe
                             </button>
                           </div>

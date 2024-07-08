@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function Home() {
   return (
-    <div className="bg-[#D9D9D9]">
+    <div className="bg-[#D9D9D9] pb-10 md:pb-0">
       <div className="h-screen flex flex-col justify-between text-center text-white md:w-5/6 xl:w-4/6 mx-auto px-3 md:pt-0 pt-5 ">
         {/* <Navbar /> */}
         <div className="flex flex-col gap-12 justify-center bg-[url('/assets/home-bg.svg')] md:mt-[40px] h-full md:h-[70%] rounded-2xl   px-4 bg-center md:bg-cover bg-no-repeat inter text-2xl">
@@ -22,11 +22,7 @@ function Home() {
             </NavLink>
           </div>
         </div>
-        <footer className="py-4 ">
-          <p className="text-[#7A7A7A] text-xs text-center">
-            Copyright © 2024 Yum Yarn
-          </p>
-        </footer>
+       
       </div>
     </div>
   );

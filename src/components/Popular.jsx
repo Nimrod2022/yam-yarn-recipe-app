@@ -65,13 +65,18 @@ function Popular() {
           drag: "free",
           gap: "3rem",
           pagination: false,
+          breakpoints: {
+            768: {
+              perPage: 1,
+            },
+          },
         }}
       >
         {popular.map((recipe) => (
           <SplideSlide key={recipe.id}>
             <Link to={"/recipe/" + recipe.id} className="block">
-              <div className="text-black h-full rounded-2xl overflow-hidden shadow-lg">
-                <div className=" overflow-hidden h-[30%]">
+              <div className="text-black md:h-[380px] rounded-2xl overflow-hidden shadow-lg">
+                <div className=" overflow-hidden h-[50%]">
                   <img
                     src={recipe.image}
                     alt={recipe.title}
@@ -79,15 +84,15 @@ function Popular() {
                   />
                 </div>
                 <div className="bg-[#FFFBF2] p-4 h-[70%]">
-                  <p className="md:text-xl font-semibold mt-3">
+                  <p className="md:text-lg text-center font-semibold ">
                     {recipe.title}
                   </p>
-                  <p className="mt-3 text-sm">
+                  <p className="mt-3 text-center text-sm">
                     {capitalizeFirstDietLetter(recipe.diets)}
                   </p>
-                  <div className="flex justify-between items-start mt-3">
-                    <p className="md:text-md text-xs mt-2">{`${recipe.readyInMinutes} - EASY PREP - ${recipe.servings} SERVINGS`}</p>
-                    <button className="border rounded-lg text-xs md:text-sm border-black hover:border-none hover:bg-[#F29C33] p-2">
+                  <div className="flex flex-col justify-center items-center my-1">
+                    <p className="md:text-md font-semibold text-center text-xs mt-2">{`${recipe.readyInMinutes} - EASY PREP - ${recipe.servings} SERVINGS`}</p>
+                    <button className="border rounded-lg text-xs md:text-sm  hover:bg-[#D9D9D9] bg-[#F29C33] px-2 my-2 p-2">
                       View recipe
                     </button>
                   </div>

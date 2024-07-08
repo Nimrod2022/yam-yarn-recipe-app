@@ -32,7 +32,7 @@ function Searched() {
         {searchedRecipe.length > 0 ? (
           searchedRecipe.map((recipe) => (
             <Link to={"/recipe/" + recipe.id} key={recipe.id} className="block">
-              <div className="text-black md:w-[410px] md:h-[400px] rounded-2xl overflow-hidden shadow-lg">
+              <div className="text-black md:w-[410px] md:h-[400px] text-center rounded-2xl overflow-hidden shadow-lg">
                 <div className="h-[203px] overflow-hidden">
                   <img
                     src={recipe.image}
@@ -44,12 +44,12 @@ function Searched() {
                   <p className="md:text-xl font-semibold mt-3">
                     {recipe.title}
                   </p>
-                  <p className="mt-3 text-sm">{` ${recipe.diets}`}</p>
+                  {/* <p className="mt-3 text-sm">{` ${recipe.diets}`}</p> */}
 
-                  <div className="flex justify-between items-start mt-3">
-                    <p className="text-md mt-2">{`${recipe.readyInMinutes} - EASY PREP - ${recipe.servings} SERVINGS`}</p>
+                  <div className=" mt-3">
+                    {/* <p className="text-md mt-2">{`${recipe.readyInMinutes} - EASY PREP - ${recipe.servings} SERVINGS`}</p> */}
 
-                    <button className="border rounded-lg text-sm border-black hover:border-none hover:bg-[#F29C33] p-2">
+                    <button className="border rounded-lg text-sm hover:bg-[#D9D9D9] bg-[#F29C33] md:text-lg md:px-3 p-2">
                       View recipe
                     </button>
                   </div>
